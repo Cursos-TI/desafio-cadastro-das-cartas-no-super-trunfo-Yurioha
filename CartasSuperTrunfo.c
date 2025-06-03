@@ -7,7 +7,7 @@ int main(){
     char code[4]; //C01
     char estado[10];//ceara
     char cidade[10];//Fortaleza
-    int pop, turis; //2428678, 40
+    int pop, turis, opcao; //2428678, 40
     float pib, pibb, area; //73.43 (7.343.000.000), 312353
     
     //carta 2
@@ -99,5 +99,69 @@ int main(){
     printf("Densidade populacional: %.2f hab/km²\n", densi2);
     printf("PIB per capita: R$%.2f\n", pibpc2);
 
-    return 0;
+
+    // Comparação de cartas pelo atributo
+    printf("\nComparação de cartas\n");
+    printf("1. PIB per capita\n");
+    printf("2. Área\n");
+    printf("3. População\n");
+    printf("Escolha o metodo comparativo: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+
+        printf("Atributo escolhido. PIB per capita!!\n\n");
+
+        printf("Carta 1 - %s = %.2f\n", cidade, pibpc);
+        printf("Carta 2 - %s = %.2f\n", cidade2, pibpc2);
+
+
+         if (pibpc > pibpc2){
+        printf("\nResultado: Carta 1 ganhou!!\n\n\n");
+
+
+    }else{
+        printf("\nResultado: Carta 2 ganhou!!\n\n\n");
+    }
+
+        break;
+    case 2:
+        printf("Atributo escolhido. Área!!\n\n");
+
+        printf("Carta 1 - %s = %.2f\n", cidade, area);
+        printf("Carta 2 - %s = %.2f\n", cidade2, area2);
+
+
+        if (area > area2){
+        printf("\nResultado: Carta 1 ganhou!!\n\n\n");
+
+
+    }else{
+        printf("\nResultado: Carta 2 ganhou!!\n\n\n");
+    }
+        break;
+    case 3:
+    printf("Atributo escolhido. População!!\n\n");
+
+    printf("Carta 1 - %s = %d\n", cidade, pop);
+    printf("Carta 2 - %s = %d\n", cidade2, pop2);
+
+
+    if (pop > pop2){
+        printf("\nResultado: Carta 1 ganhou!!\n\n\n");
+
+
+    }else{
+        printf("\nResultado: Carta 2 ganhou!!\n\n\n");
+    }
+        break;
+    default:
+        printf("Opção invalida, reeniciando jogo!\n\n\n");
+        break;
+    }
+
+
+    
 }
